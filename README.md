@@ -12,5 +12,6 @@ Tests for candidates 2018
    - Copy file from test_task folder to remoute
    - Run docker-compose.yml
    - Frontend and backend must be started using ansible
-   *FOR Advanced:
+------------------------------------------------------
+   - FOR Advanced:
      Install Kubernetes cluster with a help of ansible - 1 master 2 nodes
