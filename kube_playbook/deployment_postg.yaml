@@ -15,6 +15,13 @@ spec:
       containers:
       - name: postg
         image: postgres:9.6
+        volumeMounts:
+        - mountPath: /postg   
+          name: postg-volume
+      volumes:
+       - name: postg-volume
+         hostPath:
+          path: ./local/postgres
         ports:
         - containerPort: 5432
       nodeSelector:
