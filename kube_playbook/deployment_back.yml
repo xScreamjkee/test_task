@@ -1,0 +1,27 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    service: backend
+  name: back
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  minReadySeconds: 15
+  template:
+     metadata:
+        labels:
+          service: backend
+     spec:
+      containers:
+      - name: back
+        image: xscreamjkee/back
+        ports:
+        - containerPort: 3000
+      nodeSelector:
+        label: node2
+      restartPolicy: Always

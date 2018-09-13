@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    service: postgres
+  name: postg
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        service: postgres
+    spec:
+      containers:
+      - name: postg
+        image: postgres:9.6
+        ports:
+        - containerPort: 5432
+      nodeSelector:
+        label: node1
+      restartPolicy: Always

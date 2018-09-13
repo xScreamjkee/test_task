@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    service: nginx
+  name: nginx
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        service: nginx
+    spec:
+      containers:
+      - image: xscreamjkee/nginx
+        name: nginx
+        ports:
+        - containerPort: 80
+        - containerPort: 8080
+      nodeSelector:
+        label: node2
+      restartPolicy: Always
