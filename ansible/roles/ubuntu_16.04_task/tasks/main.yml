@@ -1,0 +1,21 @@
+---
+- name: Install packages
+  include_tasks: "../tasks/install/{{ item }}.yml"
+  with_items:
+   - nginx
+   - postgresql
+   - redis
+   - docker
+   - docker-compose
+
+- name: Copy files and Add swap
+  include_tasks: "../tasks/basic/{{ item }}.yml"
+  with_items:
+   - add_swap
+   - copy_file
+
+- name: Run docker-compose
+  include_tasks: "../tasks/run/{{ item }}.yml"
+  with_items:
+   - run_compose
+   

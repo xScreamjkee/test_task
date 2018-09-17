@@ -1,0 +1,7 @@
+[servers]
+node2  ansible_host=x.x.x.x
+node1  ansible_host=x.x.x.x
+master ansible_host=x.x.x.x
+
+
+

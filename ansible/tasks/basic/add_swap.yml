@@ -1,0 +1,18 @@
+---
+- name: create swap file
+  shell: fallocate -l 1G /swap_1gb
+
+- name: change permission type
+  shell: chmod 600 /swap_1gb
+
+- name: setup swap
+  shell: mkswap /swap_1gb
+    
+- name: create swap
+  shell: swapon /swap_1gb
+
+- name: Add to fstab
+  lineinfile:
+    dest: /etc/fstab
+    regexp: swap_1gb
+    line: /swap_1gb none swap sw 0 0

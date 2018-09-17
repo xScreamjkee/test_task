@@ -1,0 +1,7 @@
+---
+- name: "Task 3 | Ansible recipe for ubuntu 16.04"
+  hosts: servers
+  become: yes
+
+  roles:
+    - ubuntu_16.04_task

@@ -1,0 +1,7 @@
+---
+- name: Install default nginx web server  
+  apt: 
+   name: "nginx" 
+   state: "installed"
+   update_cache: "yes"
+
