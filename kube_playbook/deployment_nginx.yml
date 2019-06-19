@@ -18,6 +18,6 @@ spec:
         ports:
         - containerPort: 80
         - containerPort: 8080
-      nodeSelector:
-        label: node2
+#      nodeSelector:
+#        label: node2
       restartPolicy: Always
