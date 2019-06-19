@@ -14,16 +14,16 @@ spec:
     spec:
       containers:
       - name: postg
-        image: postgres:9.6
-        volumeMounts:
-        - mountPath: /postg   
-          name: postg-volume
-      volumes:
-       - name: postg-volume
-         hostPath:
-          path: ./local/postgres
+        image: amsterdam/postgres9.6
         ports:
         - containerPort: 5432
-      nodeSelector:
-        label: node1
+        volumeMounts:
+        - mountPath: /postg
+          name: postg-volume
+      volumes:
+      - name: postg-volume
+        hostPath:
+          path: "/local/postgres"
+#      nodeSelector:
+#        label: node1
       restartPolicy: Always
